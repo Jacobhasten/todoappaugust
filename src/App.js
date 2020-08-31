@@ -6,7 +6,11 @@ import edit from "./images/edit.png"
 import remove from "./images/remove_circle_24px.png"
 import addCircle from "./images/add_circle.png"
 import larry from "./images/larry.jpeg"
-
+const user = {
+  firstName: "Larry",
+  lastName: "The Cable Guy",  
+  avatar: larry
+}
 const todoList = [{
   id: 1,
   title: "Laundry",
@@ -32,8 +36,8 @@ function App() {
       <div className="sidebar">
         <img className="sidebar__hamburger" src={hamburger}></img>
         <div className="sidebar__avatar">
-          <img className="sidebar__avatar-img" src={larry} />
-          <p className="sidebar__avatar-name"> Larry The Cable Guy</p>
+          <img className="sidebar__avatar-img" src={user.avatar} />
+  <p className="sidebar__avatar-name"> {user.firstName} {user.lastName}</p>
         </div>
         <h3>Git 'r Done</h3>
         <h3>Dashboard</h3>
