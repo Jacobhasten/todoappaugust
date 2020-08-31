@@ -52,7 +52,7 @@ function App() {
            
             <div className="todo-list__items__button-content">
               <input type="checkbox" checked={item.completed} className="todo-list__items__button-content__checkbox" src={checkCircle} />
-        <p className="todo-list__items__button-content__title">{item.title}</p>
+        <p style={item.completed? styles.notCompletedTask: null} className="todo-list__items__button-content__title">{item.title}</p>
               <img className="todo-list__items__button-content__edit" src={edit}></img>
               <img className="todo-list__items__button-content__remove" src={remove}></img>
             </div>
@@ -66,5 +66,10 @@ function App() {
     </div>
   );
 }
-
+const styles = {
+  notCompletedTask: {
+    
+    textDecoration: "line-through"
+  }
+}
 export default App;
