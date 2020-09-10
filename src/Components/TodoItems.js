@@ -1,8 +1,6 @@
 import React from 'react';
 import '../App.css';
 import checkCircle from "../images/checkcircle.png";
-import edit from "../images/edit.png";
-import remove from "../images/remove_circle_24px.png";
 
 const styles = {
     notCompletedTask: {
@@ -11,13 +9,20 @@ const styles = {
   }
 
     function TodoItems(props) {
+      const handleCheckTodo = () => props.onCheckTodo(props.todoItem.id)
+      const handleDeleteTodo = () => props.onDeleteTodo(props.todoItem.id)
         return (
         <div className="todo-list__items__button">
             <div className="todo-list__items__button-content">
-              <input type="checkbox" checked={props.item.completed} className="todo-list__items__button-content__checkbox" src={checkCircle} />
-        <p style={props.item.completed? styles.notCompletedTask: null} className="todo-list__items__button-content__title">{props.item.title}</p>
-              <img className="todo-list__items__button-content__edit" src={edit}></img>
-              <img className="todo-list__items__button-content__remove" src={remove}></img>
+              <input type="checkbox" 
+              defaultChecked={props.todoItem.completed} 
+              onChange={handleCheckTodo}
+              className="todo-list__items__button-content__checkbox" 
+              src={checkCircle} />
+        <p style={props.todoItem.completed? styles.notCompletedTask: null} 
+        className="todo-list__items__button-content__title">{props.todoItem.title}</p>
+              <button className="todo-list__items__button-content__edit"/>
+              <button onClick={handleDeleteTodo} className="todo-list__items__button-content__remove"/>
             </div>
         </div>
         )
