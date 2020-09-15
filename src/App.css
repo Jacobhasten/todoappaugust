@@ -1,6 +1,7 @@
 :root {
   --main-color: #07584A;
   --light-color: #E7F4F2;
+  --form-font-size: 1rem;
 }
 
   h1, h2, h3 {
@@ -161,11 +162,23 @@ li {
   cursor: pointer;
 }
 
+.todo-list__add-item__container {
+  padding-top: 2rem;
+}
+.todo-list__add-item__name {
+  font-size: var(--form-font-size);
+}
+
+.todo-list__add-item__description {
+  padding-top: 1.2rem;
+  font-size: 1rem;
+}
 
 input[type=text],
+input[type=textarea],
 input[type=text]:focus{
   -webkit-appearance: none;
-  border-radius: 10rem;
+  border-radius: 1rem;
   width: 10rem;
   border: 1px var(--light-color) solid;
   background-color: var(--light-color);
@@ -177,6 +190,12 @@ input[type=text]:focus{
   padding-left: 1.5rem;
   font-size: 1.2rem;
   font-family: 'Abel', sans-serif;
+}
+
+input[type=textarea] {
+  height: 9rem;
+  border-radius: 1rem;
+  box-sizing: border-box;
 }
 
 @media (min-width: 900px) {

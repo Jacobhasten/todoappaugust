@@ -97,15 +97,15 @@ class App extends React.Component {
           </div>
           <img className="todo-list__items__add-circle" src={addCircle}></img>
           <div className="todo-list__add-item__container">
-            <p>Name</p>
+            <p className="todo-list__add-item__name">Name</p>
             <input type="text"
             onChange={this.handleNewItemChangeTitle}
             value={this.state.newToDoItemTitle}/>
-            <p>Description</p>
+            <p className="todo-list__add-item__description">Description (optional)</p>
             <input type="textarea"
             onChange={this.handleNewItemChangeDescription}
             value={this.state.newToDoItemDescription}/>
-            <button onClick={this.handleAddNewItem}>Save</button>
+            <button onClick={this.handleAddNewItem}className="todolist">Save</button>
           </div>
         </div>
       </div>
